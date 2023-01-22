@@ -3,6 +3,13 @@
   text-align: center;
 }
 
+button {
+  display: block;
+  margin: 32px auto;
+  text-align: center;
+  width: 64px;
+}
+
 .container {
   border: 2px solid black;
   width: 320px;
@@ -12,6 +19,24 @@
   flex-wrap: wrap;
 }
 
-.hover {
+.container div {
+  border: 0.2px dotted black;
+  box-sizing: border-box;
+}
+
+.bg-purple {
   background-color: blueviolet;
+}
+
+.clearBtn {
+  color: red;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.clearBtn:hover {
+  color: white;
+  background-color: red;
 }

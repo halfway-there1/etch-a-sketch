@@ -1,14 +1,44 @@
 const container = document.querySelector('.container');
-
 const grid_size = 320; // px
-const n = 16; // no. of sqrs per side of the grid
-const sqr_size = grid_size / n;
-for (let i = 0; i < n * n; i++) {
-  const sqr = document.createElement('div');
-  sqr.style.cssText = `width: ${sqr_size}px; height: ${sqr_size}px`;
-  sqr.addEventListener('mouseover', () => {
-    sqr.classList.add('hover');
-  });
 
-  container.appendChild(sqr);
+/* make grid of size n */
+function makeGrid(n) {
+  const sqr_size = grid_size / n;
+  console.log(sqr_size);
+  for (let i = 0; i < n * n; i++) {
+    let sqr = document.createElement('div');
+    sqr.classList.add('sqr');
+
+    sqr.style.cssText = `width: ${sqr_size}px; height: ${sqr_size}px`;
+    sqr.addEventListener('mouseover', () => {
+      sqr.classList.add('bg-purple');
+    });
+
+    container.appendChild(sqr);
+  }
 }
+makeGrid(16);
+
+const inpBtn = document.querySelector('.inpBtn');
+inpBtn.addEventListener('click', () => {
+  let n = prompt('Enter grid size', 16);
+  console.log(n);
+  /* if (isNaN(n)) {
+    n = 16;
+  }
+  
+  n = Math.min(n, 100);
+  n = Math.min(n, 16); */
+
+  container.replaceChildren();
+  makeGrid(n);
+});
+
+const clearBtn = document.querySelector('.clearBtn');
+clearBtn.addEventListener('click', () => {
+  let divs = container.querySelectorAll('.sqr');
+  divs = [...divs];
+  divs.forEach((div) => {
+    div.classList.remove('bg-purple');
+  });
+});
