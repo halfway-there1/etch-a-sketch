@@ -1,6 +1,5 @@
 .header {
-  font-size: xx-large;
-  margin: auto;
+  font-size: 48px;
   text-align: center;
 }
 
@@ -11,10 +10,6 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-}
-
-.container div {
-  
 }
 
 .hover {
