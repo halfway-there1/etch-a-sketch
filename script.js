@@ -4,7 +4,7 @@ const grid_size = 320; // px
 /* make grid of size n */
 function makeGrid(n) {
   const sqr_size = grid_size / n;
-  console.log(sqr_size);
+  // console.log(sqr_size);
   for (let i = 0; i < n * n; i++) {
     let sqr = document.createElement('div');
     sqr.classList.add('sqr');
@@ -19,19 +19,18 @@ function makeGrid(n) {
 }
 makeGrid(16);
 
+let prev_n = 16;
 const inpBtn = document.querySelector('.inpBtn');
 inpBtn.addEventListener('click', () => {
   let n = prompt('Enter grid size', 16);
   console.log(n);
-  /* if (isNaN(n)) {
-    n = 16;
+  if (isNaN(n) || n > 100 || n < 16) {
+    n = prev_n;
   }
-  
-  n = Math.min(n, 100);
-  n = Math.min(n, 16); */
 
   container.replaceChildren();
   makeGrid(n);
+  prev_n = n;
 });
 
 const clearBtn = document.querySelector('.clearBtn');
