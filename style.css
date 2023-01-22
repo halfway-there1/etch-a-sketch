@@ -1,0 +1,22 @@
+.header {
+  font-size: xx-large;
+  margin: auto;
+  text-align: center;
+}
+
+.container {
+  border: 2px solid black;
+  width: 320px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container div {
+  
+}
+
+.hover {
+  background-color: blueviolet;
+}
