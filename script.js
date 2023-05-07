@@ -14,8 +14,9 @@ function makeGrid(n) {
     let sqr = document.createElement('div');
     container.appendChild(sqr);
 
+    sqr.setAttribute('draggable', 'false');
     sqr.addEventListener('mouseover', () => {
-      sqr.classList.add('bg-purple');
+      if (mousedown) sqr.classList.add('bg-purple');
     });
   }
 }
@@ -46,3 +47,14 @@ clearBtn.addEventListener('click', () => {
 (function () {
   makeGrid(16);
 })();
+
+let mousedown = false;
+window.addEventListener('mousedown', () => {
+  mousedown = true;
+  console.log('mouse is pressed');
+});
+
+window.addEventListener('mouseup', () => {
+  mousedown = false;
+  console.log('mouse is not pressed');
+});
