@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
-const grid_size = 320; // px
+let style = window.getComputedStyle(container);
+const grid_size = Number(style.getPropertyValue('width').slice(0, -2));
+console.log(grid_size);
 
 /* make grid of size n */
 function makeGrid(n) {
