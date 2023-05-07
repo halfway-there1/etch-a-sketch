@@ -22,7 +22,7 @@ makeGrid(16);
 let prev_n = 16;
 const inpBtn = document.querySelector('.inpBtn');
 inpBtn.addEventListener('click', () => {
-  let n = prompt('Enter grid size', 16);
+  let n = prompt('Enter grid size between 16 & 100', 16);
   console.log(n);
   if (isNaN(n) || n > 100 || n < 16) {
     n = prev_n;
